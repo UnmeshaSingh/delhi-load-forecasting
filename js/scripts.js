@@ -37,7 +37,7 @@ function setDefaultDate() {
 // Fetch the API result and display it
 async function fetchInitialPrediction() {
     try {
-        const response = await fetch('http://127.0.0.1:8000/getval/', {
+        const response = await fetch('https://delhi-load-forecasting-1.onrender.com/getval/', {
             method: 'POST',
         });
         const result = await response.json();
@@ -78,7 +78,7 @@ document.getElementById('predictForm').addEventListener('submit', async (event) 
 
     try {
         // Send the form data to the FastAPI endpoint
-        const response = await fetch('http://127.0.0.1:8000/predict/', {
+        const response = await fetch('https://delhi-load-forecasting-1.onrender.com/predict/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
