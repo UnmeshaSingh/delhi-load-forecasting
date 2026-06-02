@@ -2,7 +2,7 @@ import pandas as pd
 import warnings
 warnings.filterwarnings(action='ignore')
 
-data = pd.read_csv('SIH Data.csv')
+data = pd.read_csv('ml/SIH Data.csv')
 data['Datetime'] = pd.to_datetime(data['Datetime'], errors='coerce')
 data.set_index('Datetime', inplace=True)
 data = data.dropna(how='any',axis=0)
