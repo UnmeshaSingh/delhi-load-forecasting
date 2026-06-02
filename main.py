@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 from typing import List
-import only4
+from ml import only4
 
 app = FastAPI()
 
@@ -17,7 +17,7 @@ app.add_middleware(
 )
 
 # Load the dataset
-data_path = 'data/SIH Data.csv'  # Make sure this path is correct
+data_path = 'ml/SIH Data.csv'  # Make sure this path is correct
 data = pd.read_csv(data_path)
 data['Datetime'] = pd.to_datetime(data['Datetime'], errors='coerce')  # Ensure correct datetime parsing
 data.set_index('Datetime', inplace=True)
